@@ -74,6 +74,15 @@ int tinh_An(int n)
 	else return n*(n+tinh_An(n-1));
 }
 
+int tinh_Xn(int n)
+{
+	if (n==1 || n==2)
+	{
+		return 1;
+	}
+	else return (n-1) + tinh_Xn(n-1);
+}
+
 int main()
 {
 	int m, n;
@@ -118,6 +127,10 @@ int main()
 	int n4;
 	printf("Nhap n:"); scanf("%d", &n4);
 	printf("Ket qua cua phep tinh A(n)=n*(A1+A2+A3+...+A(n-1) la: %d", tinh_An(n4));
+	printf("\n---------------------------------\n");
+	int n5;
+	printf("Nhap n:"); scanf("%d", &n5);
+	printf("Ket qua cua phep tinh X(n)=X(n-1) + (n-1) la: %d", tinh_Xn(n5));
 	getch();
 	return 0;
 }
