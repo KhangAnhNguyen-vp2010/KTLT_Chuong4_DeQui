@@ -51,6 +51,20 @@ int timKiemNhiPhan(int arr[], int left, int right, int x) {
     return -1;
 }
 
+int fibonacci(int n) {
+    if (n <= 1)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int timFibonacciDeQuy(int n) {
+    int i = 0;
+    while (fibonacci(i) < n) {
+        i++;
+    }
+    return fibonacci(i - 1);
+}
+
 int main()
 {
 	int m, n;
@@ -84,6 +98,13 @@ int main()
     } else {
         printf("Phan tu khong co trong mang\n");
     }
+	printf("\n---------------------------------\n");
+	int n3;
+	 printf("Nhap so nguyen duong n: ");
+    scanf("%d", &n3);
+    
+    int ketQuaDeQuy = timFibonacciDeQuy(n3);
+    printf("So Fibonacci lon nhat nho hon %d la: %d\n", n3, ketQuaDeQuy);
 	getch();
 	return 0;
 }
