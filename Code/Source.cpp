@@ -65,6 +65,15 @@ int timFibonacciDeQuy(int n) {
     return fibonacci(i - 1);
 }
 
+int tinh_An(int n)
+{
+	if (n==1)
+	{
+		return 1;
+	}
+	else return n*(n+tinh_An(n-1));
+}
+
 int main()
 {
 	int m, n;
@@ -105,6 +114,10 @@ int main()
     
     int ketQuaDeQuy = timFibonacciDeQuy(n3);
     printf("So Fibonacci lon nhat nho hon %d la: %d\n", n3, ketQuaDeQuy);
+	printf("\n---------------------------------\n");
+	int n4;
+	printf("Nhap n:"); scanf("%d", &n4);
+	printf("Ket qua cua phep tinh A(n)=n*(A1+A2+A3+...+A(n-1) la: %d", tinh_An(n4));
 	getch();
 	return 0;
 }
